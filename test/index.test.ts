@@ -127,4 +127,66 @@ describe('extend', () => {
         });
         expect(result.p3).not.toBe(s.p3);
     });
+
+    it('will returns itself', () => {
+        const t = {
+            p0: 'foo'
+        };
+        
+
+        type resultType = {
+            p0: string;
+        }
+
+        const result: resultType = extend(t);
+        expect(result).toEqual({
+            p0: 'foo',
+        });
+    });
+
+    it('will copy the array', () => {
+        const t = {
+            p0: 'foo'
+        };
+
+        const s = {
+            p1: [1, 2, 3]
+        };
+        
+
+        type resultType = {
+            p0: string;
+            p1: number[];
+        }
+
+        const result: resultType = extend(t, s);
+        expect(result).toEqual({
+            p0: 'foo',
+            p1: [1, 2, 3]
+        });
+    });
+
+    it('will copy the array when deep is true', () => {
+        const t = {
+            p0: 'foo'
+        };
+
+        const s = {
+            p1: [1, 2, 3]
+        };
+        
+
+        type resultType = {
+            p0: string;
+            p1: number[];
+        }
+
+        const result: resultType = extend(true, t, s);
+        expect(result).toEqual({
+            p0: 'foo',
+            p1: [1, 2, 3]
+        });
+
+        expect(result.p1).not.toBe(s.p1);
+    });
 });
