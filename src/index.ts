@@ -86,7 +86,6 @@ const t8: {x: {y: null, z: undefined}} = extend(true, {}, {x: {y: null, z: undef
 // В идеальном мире тут должны быть ошибки
 const p1 = extend(() => 1, () => 's');
 const p2: (string|number)[] = extend([1], ['s']);
-const p3 = extend(WeakSet, Map);
 
 // Ошибки
 extend(1, {string: 1});
