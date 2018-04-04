@@ -1,5 +1,4 @@
 import { extend } from '../src/index';
-import * as _ from 'lodash';
 
 describe('extend', () => {
     it('will copy  props of the src object to the dest object', () => {

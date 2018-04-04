@@ -16,7 +16,6 @@
     "typescript": "^2.8.1"
   },
   "dependencies": {
-    "@types/jest": "^22.2.2",
-    "lodash": "^4.17.5"
+    "@types/jest": "^22.2.2"
   }
 }
