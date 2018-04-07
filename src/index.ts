@@ -14,7 +14,7 @@ function isPlainObject(obj: Object): boolean {
         prototype === Object.prototype;
 }
 
-// Ограничился 4мя объектами т.к. в реальной жизни этого будет более чем достаточно. В крайнем случае можно сделать 2 вызова последовательно.
+// Ограничился 4мя объектами т.к. кажется, что в реальной жизни этого достаточно; по соглашению в команде можно больше\меньше.
 export function extend<T extends object>(deep: boolean, target: T): T;
 export function extend<T extends object, S extends object>(deep: boolean, target: T, source: S): T & S;
 export function extend<T extends object, S1 extends object, S2 extends object>(deep: boolean, target: T, source1: S1, source2: S2): T & S1 & S2;
